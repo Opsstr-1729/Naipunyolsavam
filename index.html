@@ -11,10 +11,12 @@
             --primary-color: #0e5774;
             --secondary-color: #0a4359;
             --accent-color: #16a34a;
-            --bg-light: #f8fafb;
+            --bg-body: #ffffff;
+            --bg-card: #ffffff;
             --text-dark: #1f2937;
             --white: #ffffff;
-            --shadow: 0 10px 25px -5px rgba(14, 87, 116, 0.1);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --border-subtle: #edf2f7;
         }
 
         * {
@@ -25,52 +27,61 @@
         }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-body);
             color: var(--text-dark);
-            line-height: 1.5; 
+            line-height: 1.6;
         }
 
-        /* Header & Enterprise Summary */
         header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            padding: 80px 20px 100px;
+            background: var(--white);
+            padding: 60px 20px 40px;
             text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .header-logo {
+            max-width: 240px;
+            height: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .enterprise-summary {
-            margin-top: 25px;
-            opacity: 0.95;
-            max-width: 850px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.1rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 25px;
-            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: #4a5568;
+            line-height: 1.8;
         }
 
-        /* View Toggle Controls */
         .view-controls {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 15px;
-            margin: -25px auto 40px;
-            background: white;
+            margin: 40px auto;
+            background: #f8fafc;
             width: fit-content;
-            padding: 10px 25px;
+            padding: 8px 24px;
             border-radius: 50px;
-            box-shadow: var(--shadow);
-            z-index: 10;
-            position: relative;
+            border: 1px solid var(--border-subtle);
         }
 
         .switch {
             position: relative;
             display: inline-block;
-            width: 50px;
-            height: 24px;
+            width: 46px;
+            height: 22px;
         }
 
         .switch input { opacity: 0; width: 0; height: 0; }
@@ -79,7 +90,7 @@
             position: absolute;
             cursor: pointer;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #ccc;
+            background-color: #cbd5e1;
             transition: .4s;
             border-radius: 34px;
         }
@@ -88,37 +99,34 @@
             position: absolute;
             content: "";
             height: 16px; width: 16px;
-            left: 4px; bottom: 4px;
+            left: 3px; bottom: 3px;
             background-color: white;
             transition: .4s;
             border-radius: 50%;
         }
 
         input:checked + .slider { background-color: var(--primary-color); }
-        input:checked + .slider:before { transform: translateX(26px); }
+        input:checked + .slider:before { transform: translateX(24px); }
 
-        .view-label { font-weight: 700; color: var(--primary-color); font-size: 0.9rem; }
+        .view-label { font-weight: 700; color: var(--primary-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto 50px;
+            max-width: 900px;
+            margin: 0 auto 80px;
             padding: 0 20px;
         }
-
-        /* List View & Accordion Styling */
-        #list-view { display: block; }
 
         .interactive-card {
             background: var(--white);
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             box-shadow: var(--shadow);
+            border: 1px solid var(--border-subtle);
             overflow: hidden;
-            border: 1px solid rgba(14, 87, 116, 0.1);
         }
 
         .card-header {
-            padding: 25px 30px;
+            padding: 24px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -126,46 +134,42 @@
             user-select: none;
         }
 
-        .card-header:hover { background: #f0f7f9; }
-
         .card-title-group {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
         }
 
         .card-icon {
-            width: 50px;
-            height: 50px;
-            background: #e7eff1;
+            width: 44px;
+            height: 44px;
+            background: #f1f5f9;
             color: var(--primary-color);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
-        .card-header h3 { color: var(--primary-color); font-size: 1.3rem; font-weight: 700; }
-
-        .toggle-btn { color: var(--primary-color); transition: transform 0.3s ease; }
+        .card-header h3 { color: var(--primary-color); font-size: 1.2rem; font-weight: 700; }
 
         .card-body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #fafcfd;
         }
 
         .card-body.active { max-height: 2500px; }
 
         .inner-content {
-            padding: 30px 40px 40px 100px;
-            border-top: 1px solid #f0f4f5;
-            line-height: 1.6;
+            padding: 30px 40px 40px 92px;
+            border-top: 1px solid var(--border-subtle);
         }
 
         .function-block { margin-bottom: 25px; }
-        
+
         .function-block h4 { 
             color: var(--primary-color); 
             font-size: 1.1rem; 
@@ -175,11 +179,10 @@
         }
 
         .inner-content ul { list-style: none; }
-
         .inner-content li {
             position: relative;
             margin-bottom: 10px;
-            padding-left: 25px;
+            padding-left: 24px;
             font-size: 1rem;
         }
 
@@ -191,83 +194,50 @@
             font-weight: bold;
         }
 
-        .rotated { transform: rotate(180deg); }
-
-        /* Visual Map / Tree Styling */
         #visual-map { display: none; padding: 40px 0; }
-        
-        .tree {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
+        .tree { display: flex; flex-direction: column; align-items: center; gap: 20px; }
         .tree-node {
             background: var(--white);
-            border: 2px solid var(--primary-color);
-            padding: 15px 25px;
+            border: 1px solid var(--primary-color);
+            padding: 15px 20px;
             border-radius: 8px;
             text-align: center;
-            min-width: 220px;
-            box-shadow: var(--shadow);
-            position: relative;
+            min-width: 240px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
+        .tree-node h5 { color: var(--primary-color); font-size: 0.95rem; margin-bottom: 4px; }
+        .tree-node span { font-size: 0.75rem; color: #64748b; font-weight: bold; }
+        .connector { width: 1px; height: 30px; background: #cbd5e1; }
 
-        .tree-node h5 { color: var(--primary-color); font-size: 1rem; margin-bottom: 5px; }
-        .tree-node span { font-size: 0.8rem; color: #64748b; font-weight: bold; }
-
-        .connector { width: 2px; height: 30px; background: var(--primary-color); }
-
-        .branch-container {
-            display: flex;
-            gap: 30px;
-            position: relative;
-            padding-top: 20px;
-        }
-
-        .branch-container::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 10%; right: 10%;
-            height: 2px; background: var(--primary-color);
-        }
-
-        .branch { display: flex; flex-direction: column; align-items: center; }
-
-        footer { text-align: center; padding: 50px 20px; color: #64748b; font-size: 0.9rem; }
+        footer { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 0.85rem; border-top: 1px solid var(--border-subtle); }
 
         @media (max-width: 768px) {
             .inner-content { padding-left: 30px; }
-            .card-header h3 { font-size: 1.1rem; }
-            .branch-container { flex-direction: column; gap: 20px; }
-            .branch-container::before { display: none; }
+            header h1 { font-size: 1.6rem; }
+            .header-logo { max-width: 180px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;">
-        Strategic Skilling Kerala
-    </div>
-    <h1>Naipunyolsavam 2026</h1>
+    <img src="https://drive.google.com/thumbnail?id=1Osu9c9s8Q_COcPAImullmYybXNqSGt2u&sz=w1000" alt="Naipunyolsavam Logo" class="header-logo">
+    <h1>Strategic Governance Portal</h1>
     <div class="enterprise-summary">
-        <strong>Naipunyolsavam 2026</strong> is Kerala’s flagship skill movement designed to institutionalize a world-class skilling culture. By embedding proficiency at ministerial and secretariat levels, this mission democratizes technical excellence and celebratory professional success across the state.
+        Kerala’s skilling ecosystem is being reshaped through <strong>Naipunyolsavam</strong>, positioning it not just as a competition but as a structured movement to embed a strong skilling culture across the state. The initiative aims to elevate vocational skills to the same cultural importance as academics and arts by anchoring development at ministerial and secretariat levels.
     </div>
 </header>
 
 <div class="view-controls">
-    <span class="view-label">List View</span>
+    <span class="view-label">List</span>
     <label class="switch">
         <input type="checkbox" id="viewToggle" onclick="toggleView()">
         <span class="slider"></span>
     </label>
-    <span class="view-label">Visual Map</span>
+    <span class="view-label">Visual</span>
 </div>
 
 <div class="container">
-
     <div id="list-view">
         <div class="interactive-card">
             <div class="card-header" onclick="toggleCard(this)">
@@ -275,20 +245,20 @@
                     <div class="card-icon"><i class="fas fa-landmark"></i></div>
                     <h3>1. State Steering Council</h3>
                 </div>
-                <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+                <i class="fas fa-chevron-down" style="color: #cbd5e1; transition: transform 0.3s;"></i>
             </div>
             <div class="card-body">
                 <div class="inner-content">
                     <div class="function-block">
                         <h4>Core Mandate</h4>
-                        <p>Provides the highest strategic authority and inter-departmental synergy for the statewide mission.</p>
+                        <p>Acts as the highest strategic authority to provide the executive vision and inter-departmental synergy required for a statewide mission.</p>
                     </div>
                     <div class="function-block">
                         <h4>Primary Functions</h4>
                         <ul>
-                            <li><strong>Chair:</strong> Chief Minister.</li>
-                            <li><strong>Vision:</strong> Democratize the "Skilling" culture as a cultural and professional landmark.</li>
-                            <li><strong>Alignment:</strong> Synchronizes different government arms to reach every household.</li>
+                            <li><strong>Strategic Objective:</strong> Democratize the "Skilling" culture so it is recognized as a professional and cultural landmark.</li>
+                            <li><strong>Political Oversight:</strong> Chaired by the <strong>Chief Minister</strong> with Cabinet Ministers to ensure the mission remains a state-level priority.</li>
+                            <li><strong>Resource Alignment:</strong> Harmonizes different government arms to reach every household.</li>
                         </ul>
                     </div>
                 </div>
@@ -301,20 +271,20 @@
                     <div class="card-icon"><i class="fas fa-gavel"></i></div>
                     <h3>2. High Power Committee (HPC)</h3>
                 </div>
-                <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+                <i class="fas fa-chevron-down" style="color: #cbd5e1; transition: transform 0.3s;"></i>
             </div>
             <div class="card-body">
                 <div class="inner-content">
                     <div class="function-block">
                         <h4>Core Mandate</h4>
-                        <p>The primary administrative body for statewide policy implementation and inter-departmental executive logic.</p>
+                        <p>The primary administrative body responsible for statewide policy implementation and inter-departmental executive decisions.</p>
                     </div>
                     <div class="function-block">
                         <h4>Primary Functions</h4>
                         <ul>
-                            <li><strong>Chair:</strong> Chief Secretary.</li>
-                            <li><strong>Administrative Approval:</strong> Vets and approves the Master Plan for statewide execution.</li>
+                            <li><strong>Administrative Approval:</strong> Chaired by the <strong>Chief Secretary</strong> to vet and approve the Master Plan for statewide execution.</li>
                             <li><strong>Mandatory Orders:</strong> Issues formal Government Orders (GOs) that bind departments to a single execution timeline.</li>
+                            <li><strong>Institutionalization:</strong> Ensures that the skilling mechanism is robust and independent of individual personnel changes.</li>
                         </ul>
                     </div>
                 </div>
@@ -327,20 +297,23 @@
                     <div class="card-icon"><i class="fas fa-users-cog"></i></div>
                     <h3>3. Implementation Sub-Committee</h3>
                 </div>
-                <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+                <i class="fas fa-chevron-down" style="color: #cbd5e1; transition: transform 0.3s;"></i>
             </div>
             <div class="card-body">
                 <div class="inner-content">
                     <div class="function-block">
                         <h4>Core Mandate</h4>
-                        <p>Bridges administrative policy and technical field execution at the SSDM level.</p>
+                        <p>Serves as the bridge between administrative policy and technical field execution at the nodal agency level.</p>
                     </div>
                     <div class="function-block">
                         <h4>Primary Functions</h4>
                         <ul>
-                            <li><strong>Chair:</strong> Labour Secretary.</li>
-                            <li><strong>Oversight:</strong> Monitors the "Skilling MIS" logic and logistical readiness.</li>
-                            <li><strong>Monitoring:</strong> Resolves immediate hurdles in candidate management and venue mapping.</li>
+                            <li><strong>Operational Oversight:</strong> Chaired by the <strong>Labour Secretary</strong> to monitor the progress and logistical readiness.</li>
+                            <li><strong>Frequent Monitoring:</strong>  This committee meets more frequently than the HPC to monitor
+progress, resolve logistical hurdles, and ensure that the technical frameworks
+are being implemented according to the timeline.
+</li>
+                            <li><strong>Liaison:</strong> Coordinates directly with Directors and HODs for localized execution.</li>
                         </ul>
                     </div>
                 </div>
@@ -353,20 +326,20 @@
                     <div class="card-icon"><i class="fas fa-cogs"></i></div>
                     <h3>4. Program Committee</h3>
                 </div>
-                <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+                <i class="fas fa-chevron-down" style="color: #cbd5e1; transition: transform 0.3s;"></i>
             </div>
             <div class="card-body">
                 <div class="inner-content">
                     <div class="function-block">
                         <h4>Core Mandate</h4>
-                        <p>The executive engine of Naipunyolsavam, responsible for field action and coordination.</p>
+                        <p>The executive engine of Naipunyolsavam, responsible for field action and ground-level coordination.</p>
                     </div>
                     <div class="function-block">
-                        <h4>Primary Functions</h4>
+                        <h4>Leadership & Function</h4>
                         <ul>
                             <li><strong>Leadership:</strong> Led by the <strong>Mission Director</strong> and supported by the <strong>COO</strong>.</li>
-                            <li><strong>Execution:</strong> Manages actual conduct, including venue mapping and ground coordination.</li>
-                            <li><strong>Liaison:</strong> Translates secretary-level mandates intoground-level deliverables.</li>
+                            <li><strong>Execution:</strong> Responsible for the actual conduct, including venue mapping and candidate management.</li>
+                            <li><strong>Coordination:</strong> Manages various task units and ensures mandates are translated into ground-level action.</li>
                         </ul>
                     </div>
                 </div>
@@ -379,20 +352,21 @@
                     <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
                     <h3>5. Specialized Task Units</h3>
                 </div>
-                <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+                <i class="fas fa-chevron-down" style="color: #cbd5e1; transition: transform 0.3s;"></i>
             </div>
             <div class="card-body">
                 <div class="inner-content">
                     <div class="function-block">
                         <h4>Core Mandate</h4>
-                        <p>The technical engine executing the standardized assessment logic for 63 skills.</p>
+                        <p>At the base of the hierarchy are the specialized units that handle the technical
+details of the competition. These units are categorized by their specific functions:</p>
                     </div>
                     <div class="function-block">
                         <h4>Primary Functions</h4>
                         <ul>
-                            <li><strong>Assessment:</strong> Managing 3 sets of question papers across 4 levels for global benchmarking.</li>
-                            <li><strong>Industry Vetting:</strong> Direct integration of industrial assessors to align with Occupational Standards.</li>
-                            <li><strong>The Feeder System:</strong> Vetting talent to create an "industry-ready"verified pool.</li>
+                            <li><strong>Assessment:</strong> Managing 3 sets of question papers across 4 distinct levels for global benchmarks.</li>
+                            <li><strong>Industry Vetting:</strong> Direct integration of industrial assessors to ensure alignment with Occupational Standards.</li>
+                            <li><strong>Mobilization:</strong> Manages physical aspects of the competition across different districts and zones.</li>
                         </ul>
                     </div>
                 </div>
@@ -402,53 +376,21 @@
 
     <div id="visual-map">
         <div class="tree">
-            <div class="tree-node">
-                <h5>State Steering Council</h5>
-                <span>Chair: Chief Minister</span>
-            </div>
+            <div class="tree-node"><h5>State Steering Council</h5><span>Chief Minister</span></div>
             <div class="connector"></div>
-            <div class="tree-node">
-                <h5>High Power Committee</h5>
-                <span>Chair: Chief Secretary</span>
-            </div>
+            <div class="tree-node"><h5>High Power Committee</h5><span>Chief Secretary</span></div>
             <div class="connector"></div>
-            <div class="tree-node">
-                <h5>Implementation Sub-Committee</h5>
-                <span>Chair: Labour Secretary</span>
-            </div>
+            <div class="tree-node"><h5>Implementation Sub-Committee</h5><span>Labour Secretary</span></div>
             <div class="connector"></div>
-            <div class="tree-node">
-                <h5>Program Committee</h5>
-                <span>MD & COO | Executive Arm</span>
-            </div>
+            <div class="tree-node"><h5>Program Committee</h5><span>MD & COO (KASE)</span></div>
             <div class="connector"></div>
-            <div class="branch-container">
-                <div class="branch">
-                    <div class="tree-node">
-                        <h5>Assessment Unit</h5>
-                        <span>63 Skills | 4 Levels</span>
-                    </div>
-                </div>
-                <div class="branch">
-                    <div class="tree-node">
-                        <h5>Industry Integration</h5>
-                        <span>Industrial Vetting</span>
-                    </div>
-                </div>
-                <div class="branch">
-                    <div class="tree-node">
-                        <h5>Logistics Unit</h5>
-                        <span>Venue Mapping</span>
-                    </div>
-                </div>
-            </div>
+            <div class="tree-node"><h5>Specialized Units</h5><span>63 Skills | 4 Levels</span></div>
         </div>
     </div>
-
 </div>
 
 <footer>
-    <p>© 2026 Naipunyolsavam Skill Festival | Governed by KASE SSDM Kerala</p>
+    © 2026 Kerala Academy for Skills Excellence | Governed by SSDM Kerala
 </footer>
 
 <script>
@@ -460,16 +402,16 @@
 
     function toggleCard(header) {
         const body = header.nextElementSibling;
-        const icon = header.querySelector('.toggle-btn i');
+        const icon = header.querySelector('.fa-chevron-down');
         const isActive = body.classList.contains('active');
-
-        // Accordion effect: Close all others
-        document.querySelectorAll('.card-body').forEach((b) => b.classList.remove('active'));
-        document.querySelectorAll('.toggle-btn i').forEach((i) => i.classList.remove('rotated'));
-
+        
+        // Accordion functionality
+        document.querySelectorAll('.card-body').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.fa-chevron-down').forEach(i => i.style.transform = 'rotate(0deg)');
+        
         if (!isActive) {
             body.classList.add('active');
-            icon.classList.add('rotated');
+            icon.style.transform = 'rotate(180deg)';
         }
     }
 </script>
