@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naipunyolsavam 2026 | Detailed Strategic Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0e5774;
+            --secondary-color: #0a4359;
+            --accent-color: #16a34a;
+            --bg-light: #f8fafb;
+            --text-dark: #1f2937;
+            --white: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(14, 87, 116, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Serif', serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.5; 
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .enterprise-summary {
+            margin-top: 25px;
+            opacity: 0.95;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 25px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 50px;
+            padding: 0 20px;
+        }
+
+        .interactive-card {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid rgba(14, 87, 116, 0.1);
+        }
+
+        .card-header {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .card-header:hover { background: #f0f7f9; }
+
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #e7eff1;
+            color: var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+
+        .card-header h3 { color: var(--primary-color); font-size: 1.3rem; font-weight: 700; }
+
+        .toggle-btn { color: var(--primary-color); transition: transform 0.3s ease; }
+
+        .card-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-body.active {
+            max-height: 2500px;
+        }
+
+        .inner-content {
+            padding: 30px 40px 40px 100px;
+            border-top: 1px solid #f0f4f5;
+            line-height: 1.6;
+        }
+
+        .function-block { margin-bottom: 25px; }
+        
+        .function-block h4 { 
+            color: var(--primary-color); 
+            font-size: 1.1rem; 
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e7eff1;
+            display: inline-block;
+        }
+
+        .inner-content ul { list-style: none; }
+
+        .inner-content li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            font-size: 1rem;
+        }
+
+        .inner-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .rotated { transform: rotate(180deg); }
+
+        footer { text-align: center; padding: 50px 20px; color: #64748b; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .inner-content { padding-left: 30px; }
+            .card-header h3 { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;">
+        Comprehensive Strategy
+    </div>
+    <h1>Naipunyolsavam 2026</h1>
+    <div class="enterprise-summary">
+        Kerala’s skilling ecosystem is being reshaped through Naipunyolsavam, positioning it not just as a competition but as a structured movement to embed a strong skilling culture across the state. The initiative aims to elevate vocational skills to the same cultural importance as academics and arts, while integrating skill development into governance by anchoring it at ministerial and secretariat levels. This portal outlines the proposed governance structure, organisational framework, and key operational strategies to ensure its effective implementation and long-term sustainability.
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="interactive-card">
+        <div class="card-header" onclick="toggleCard(this)">
+            <div class="card-title-group">
+                <div class="card-icon"><i class="fas fa-landmark"></i></div>
+                <h3>1. State Steering Council</h3>
+            </div>
+            <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+            <div class="inner-content">
+                <div class="function-block">
+                    <h4>Core Mandate</h4>
+                    <p>Acts as the highest strategic authority to provide the executive vision and inter-departmental synergy required for a statewide mission.</p>
+                </div>
+                <div class="function-block">
+                    <h4>Primary Functions</h4>
+                    <ul>
+                        <li><strong>Strategic Objective:</strong> Democratize the "Skilling" culture so it is recognized as a professional and cultural landmark.</li>
+                        <li><strong>Political Oversight:</strong> Chaired by the <strong>Chief Minister</strong> with Cabinet Ministers (Labour, Industries, Higher Education, LSGD) to ensure the mission remains a state-level priority.</li>
+                        <li><strong>Resource Alignment:</strong> Harmonizes different government arms to reach every household.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="interactive-card">
+        <div class="card-header" onclick="toggleCard(this)">
+            <div class="card-title-group">
+                <div class="card-icon"><i class="fas fa-gavel"></i></div>
+                <h3>2. High Power Committee (HPC)</h3>
+            </div>
+            <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+            <div class="inner-content">
+                <div class="function-block">
+                    <h4>Core Mandate</h4>
+                    <p>The primary administrative body responsible for statewide policy implementation and inter-departmental executive decisions.</p>
+                </div>
+                <div class="function-block">
+                    <h4>Primary Functions</h4>
+                    <ul>
+                        <li><strong>Administrative Approval:</strong> Chaired by the <strong>Chief Secretary</strong> to vet and approve the Master Plan for statewide execution.</li>
+                        <li><strong>Mandatory Orders:</strong> Issues formal Government Orders (GOs) that bind various departments (Education, Industries, Labour) to a single execution timeline.</li>
+                        <li><strong>Institutionalization:</strong> Ensures that the skilling mechanism is robust and independent of individual personnel changes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="interactive-card">
+        <div class="card-header" onclick="toggleCard(this)">
+            <div class="card-title-group">
+                <div class="card-icon"><i class="fas fa-users-cog"></i></div>
+                <h3>3. Implementation Sub-Committee</h3>
+            </div>
+            <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+            <div class="inner-content">
+                <div class="function-block">
+                    <h4>Core Mandate</h4>
+                    <p>Serves as the bridge between administrative policy and technical field execution at the nodal agency level.</p>
+                </div>
+                <div class="function-block">
+                    <h4>Primary Functions</h4>
+                    <ul>
+                        <li><strong>Operational Oversight:</strong> Chaired by the <strong>Labour Secretary</strong> to monitor the "Skilling MIS" and logistical readiness.</li>
+                        <li><strong>Frequent Monitoring:</strong> Meets more regularly than the HPC to resolve immediate hurdles in candidate management and venue mapping.</li>
+                        <li><strong>Liaison:</strong> Coordinates directly with Directors and Heads of Departments (HODs) for localized execution.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="interactive-card">
+        <div class="card-header" onclick="toggleCard(this)">
+            <div class="card-title-group">
+                <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                <h3>4. Program Committee</h3>
+            </div>
+            <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+            <div class="inner-content">
+                <div class="function-block">
+                    <h4>Core Mandate</h4>
+                    <p>Serves as the executive engine of Naipunyolsavam, responsible for translating administrative mandates into field action.</p>
+                </div>
+                <div class="function-block">
+                    <h4>Leadership & Function</h4>
+                    <ul>
+                        <li><strong>Leadership:</strong> Led by the <strong>Mission Director</strong> and supported by executive officers such as the <strong>COO</strong>.</li>
+                        <li><strong>Execution:</strong> Responsible for the actual conduct of Naipunyolsavam, including venue mapping and candidate management.</li>
+                        <li><strong>Coordination:</strong> Manages various specialized task units and ensures secretary-level mandates are executed on the ground.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="interactive-card">
+        <div class="card-header" onclick="toggleCard(this)">
+            <div class="card-title-group">
+                <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
+                <h3>5. Specialized Task Units</h3>
+            </div>
+            <div class="toggle-btn"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+            <div class="inner-content">
+                <div class="function-block">
+                    <h4>Core Mandate</h4>
+                    <p>The technical engine responsible for executing the standardized assessment logic across 63 skills.</p>
+                </div>
+                <div class="function-block">
+                    <h4>Primary Functions</h4>
+                    <ul>
+                        <li><strong>Assessment Committee:</strong> Managing 3 sets of question papers across 4 distinct levels to maintain global benchmarks.</li>
+                        <li><strong>Industry Vetting:</strong> Direct integration of industrial assessors to ensure test projects align with market Occupational Standards.</li>
+                        <li><strong>Logistics and Mobilization Unit:</strong> Manages the physical aspects of the competition across different districts and zones.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Naipunyolsavam Skill Festival | Governed by KASE SSDM Kerala</p>
+</footer>
+
+<script>
+    function toggleCard(header) {
+        const body = header.nextElementSibling;
+        const icon = header.querySelector('.toggle-btn i');
+        const isActive = body.classList.contains('active');
+
+        // Close all for accordion effect
+        document.querySelectorAll('.card-body').forEach((b) => b.classList.remove('active'));
+        document.querySelectorAll('.toggle-btn i').forEach((i) => i.classList.remove('rotated'));
+
+        if (!isActive) {
+            body.classList.add('active');
+            icon.classList.add('rotated');
+        }
+    }
+</script>
+
+</body>
+</html>
