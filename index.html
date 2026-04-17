@@ -195,26 +195,86 @@
         }
 
         #visual-map { display: none; padding: 40px 0; }
-        .tree { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
         .tree-node {
             background: var(--white);
             border: 1px solid var(--primary-color);
-            padding: 15px 20px;
+            padding: 15px 25px;
             border-radius: 8px;
             text-align: center;
-            min-width: 240px;
+            min-width: 280px;
+            max-width: 350px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
-        .tree-node h5 { color: var(--primary-color); font-size: 0.95rem; margin-bottom: 4px; }
-        .tree-node span { font-size: 0.75rem; color: #64748b; font-weight: bold; }
+
+        .tree-node:hover { transform: translateY(-5px); }
+
+        .tree-node h5 { color: var(--primary-color); font-size: 1rem; margin-bottom: 5px; }
+        .tree-node p { font-size: 0.75rem; color: #4b5563; line-height: 1.4; margin-top: 5px; text-align: left; }
+        .tree-node span { font-size: 0.8rem; color: #64748b; font-weight: bold; }
+
         .connector { width: 1px; height: 30px; background: #cbd5e1; }
 
-        footer { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 0.85rem; border-top: 1px solid var(--border-subtle); }
+        .branch-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            padding-top: 30px;
+            width: 100%;
+        }
 
-        @media (max-width: 768px) {
+        .branch-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: #cbd5e1;
+        }
+
+        .branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .branch::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            width: 1px;
+            height: 30px;
+            background: #cbd5e1;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            color: #94a3b8; 
+            font-size: 0.85rem; 
+            border-top: 1px solid var(--border-subtle); 
+        }
+
+        @media (max-width: 900px) {
             .inner-content { padding-left: 30px; }
             header h1 { font-size: 1.6rem; }
             .header-logo { max-width: 180px; }
+            .branch-container { flex-direction: column; align-items: center; gap: 40px; }
+            .branch-container::before { display: none; }
+            .branch::before { display: none; }
         }
     </style>
 </head>
@@ -222,7 +282,7 @@
 
 <header>
     <img src="https://drive.google.com/thumbnail?id=1Osu9c9s8Q_COcPAImullmYybXNqSGt2u&sz=w1000" alt="Naipunyolsavam Logo" class="header-logo">
-    <h1>Strategic Governance Portal</h1>
+    <h1>Naipunyolsavam 2026</h1>
     <div class="enterprise-summary">
         Kerala’s skilling ecosystem is being reshaped through <strong>Naipunyolsavam</strong>, positioning it not just as a competition but as a structured movement to embed a strong skilling culture across the state. The initiative aims to elevate vocational skills to the same cultural importance as academics and arts by anchoring development at ministerial and secretariat levels.
     </div>
@@ -257,7 +317,7 @@
                         <h4>Primary Functions</h4>
                         <ul>
                             <li><strong>Strategic Objective:</strong> Democratize the "Skilling" culture so it is recognized as a professional and cultural landmark.</li>
-                            <li><strong>Political Oversight:</strong> Chaired by the <strong>Chief Minister</strong> with Cabinet Ministers to ensure the mission remains a state-level priority.</li>
+                            <li><strong>Political Oversight:</strong> Chaired by the <strong>Chief Minister</strong> with Cabinet Ministers to ensure Naipunyolsavam remains a state-level priority.</li>
                             <li><strong>Resource Alignment:</strong> Harmonizes different government arms to reach every household.</li>
                         </ul>
                     </div>
@@ -295,7 +355,7 @@
             <div class="card-header" onclick="toggleCard(this)">
                 <div class="card-title-group">
                     <div class="card-icon"><i class="fas fa-users-cog"></i></div>
-                    <h3>3. Implementation Sub-Committee</h3>
+                    <h3>3. Executive Committee</h3>
                 </div>
                 <i class="fas fa-chevron-down" style="color: #cbd5e1; transition: transform 0.3s;"></i>
             </div>
@@ -309,10 +369,7 @@
                         <h4>Primary Functions</h4>
                         <ul>
                             <li><strong>Operational Oversight:</strong> Chaired by the <strong>Labour Secretary</strong> to monitor the progress and logistical readiness.</li>
-                            <li><strong>Frequent Monitoring:</strong>  This committee meets more frequently than the HPC to monitor
-progress, resolve logistical hurdles, and ensure that the technical frameworks
-are being implemented according to the timeline.
-</li>
+                            <li><strong>Frequent Monitoring:</strong> Meets more regularly than the HPC to resolve immediate hurdles in candidate management and venue mapping.</li>
                             <li><strong>Liaison:</strong> Coordinates directly with Directors and HODs for localized execution.</li>
                         </ul>
                     </div>
@@ -337,7 +394,7 @@ are being implemented according to the timeline.
                     <div class="function-block">
                         <h4>Leadership & Function</h4>
                         <ul>
-                            <li><strong>Leadership:</strong> Led by the <strong>Mission Director</strong> and supported by the <strong>COO</strong>.</li>
+                            <li><strong>Leadership:</strong> Chaired by the <strong>Mission Director</strong> and convened by the <strong>Chief Operating Officer</strong>.</li>
                             <li><strong>Execution:</strong> Responsible for the actual conduct, including venue mapping and candidate management.</li>
                             <li><strong>Coordination:</strong> Manages various task units and ensures mandates are translated into ground-level action.</li>
                         </ul>
@@ -358,8 +415,7 @@ are being implemented according to the timeline.
                 <div class="inner-content">
                     <div class="function-block">
                         <h4>Core Mandate</h4>
-                        <p>At the base of the hierarchy are the specialized units that handle the technical
-details of the competition. These units are categorized by their specific functions:</p>
+                        <p>At the base of the hierarchy are the specialized units that handle the technical details of the competition. These units are categorized by their specific functions:</p>
                     </div>
                     <div class="function-block">
                         <h4>Primary Functions</h4>
@@ -376,21 +432,40 @@ details of the competition. These units are categorized by their specific functi
 
     <div id="visual-map">
         <div class="tree">
-            <div class="tree-node"><h5>State Steering Council</h5><span>Chief Minister</span></div>
+            <div class="tree-node"><h5>State Steering Council</h5><span>Chair: Chief Minister</span></div>
             <div class="connector"></div>
-            <div class="tree-node"><h5>High Power Committee</h5><span>Chief Secretary</span></div>
+            <div class="tree-node"><h5>High Power Committee</h5><span>Chair: Chief Secretary</span></div>
             <div class="connector"></div>
-            <div class="tree-node"><h5>Implementation Sub-Committee</h5><span>Labour Secretary</span></div>
+            <div class="tree-node"><h5>Executive Committee</h5><span>Chair: Labour Secretary</span></div>
             <div class="connector"></div>
-            <div class="tree-node"><h5>Program Committee</h5><span>MD & COO (KASE)</span></div>
+            <div class="tree-node"><h5>Program Committee</h5><span>MD & COO (KASE) | Executive Engine</span></div>
             <div class="connector"></div>
-            <div class="tree-node"><h5>Specialized Units</h5><span>63 Skills | 4 Levels</span></div>
+            <div class="branch-container">
+                <div class="branch">
+                    <div class="tree-node">
+                        <h5>Assessment Committee</h5>
+                        <p>Tasked with setting three sets of question papers across four levels for 63 skills to maintain high standards.</p>
+                    </div>
+                </div>
+                <div class="branch">
+                    <div class="tree-node">
+                        <h5>Industry Integration Unit</h5>
+                        <p>Responsible for involving industry partners in the vetting process, ensuring projects align with occupational standards.</p>
+                    </div>
+                </div>
+                <div class="branch">
+                    <div class="tree-node">
+                        <h5>Logistics & Mobilization Unit</h5>
+                        <p>Manages the physical aspects of the competition across different districts and zones.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <footer>
-    © 2026 Kerala Academy for Skills Excellence | Governed by SSDM Kerala
+    <p>© 2026 Kerala Academy for Skills Excellence</p>
 </footer>
 
 <script>
@@ -404,11 +479,8 @@ details of the competition. These units are categorized by their specific functi
         const body = header.nextElementSibling;
         const icon = header.querySelector('.fa-chevron-down');
         const isActive = body.classList.contains('active');
-        
-        // Accordion functionality
         document.querySelectorAll('.card-body').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.fa-chevron-down').forEach(i => i.style.transform = 'rotate(0deg)');
-        
         if (!isActive) {
             body.classList.add('active');
             icon.style.transform = 'rotate(180deg)';
